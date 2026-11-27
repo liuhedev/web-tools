@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>照片时间修复 · 刘贺的小工具</title>
+  <link rel="stylesheet" href="../workbench.css">
+  <script src="../vendor/fflate.js" defer></script>
+  <script type="module" src="./photo.js"></script>
+</head>
+<body>
+  <main>
+    <nav aria-label="导航"><a href="../">← 小工具</a></nav>
+    <header>
+      <h1>照片时间修复</h1>
+      <p>从文件名读取拍摄时间，写入 JPEG 副本。原照片保留在你的设备上。</p>
+    </header>
+    <form id="form">
+      <div class="field">
+        <label for="photos">选择 JPEG 照片</label>
+        <input id="photos" type="file" accept=".jpg,.jpeg,image/jpeg" multiple required aria-describedby="filename-help">
+        <p id="filename-help" class="hint">例如 20231201_120000.jpg、petal_20231201_120000.jpg 或 mmexport1701388800000.jpg。时间戳按设备时区转换。</p>
+      </div>
+      <div class="actions"><button id="run" type="submit">修复拍摄时间</button></div>
+    </form>
+    <p id="status" class="status" role="status"></p>
+    <section id="results" class="results" aria-labelledby="results-heading" hidden>
+      <header><h2 id="results-heading">处理结果</h2><button id="zip" type="button">下载 ZIP</button></header>
+      <ul id="rows" class="rows"></ul>
+    </section>
+  </main>
+</body>
+</html>

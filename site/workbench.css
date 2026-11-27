@@ -1,0 +1,40 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #192b3c;
+  background: #f2f5f8;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; }
+main { max-width: 1080px; margin: auto; padding: 28px clamp(18px, 5vw, 50px) 52px; }
+nav { margin-bottom: 36px; }
+a { color: #1d4ebc; }
+h1 { font-size: clamp(29px, 5vw, 39px); margin: 0 0 12px; }
+h2 { margin: 0; font-size: 18px; }
+p { margin: 0; color: #52667b; line-height: 1.7; }
+header { margin-bottom: 25px; }
+form, .results { padding: clamp(16px, 4vw, 28px); background: white; border: 1px solid #ced9e3; border-radius: 9px; }
+form { display: grid; gap: 16px; }
+label { display: block; font-weight: 600; }
+.field { display: grid; gap: 8px; }
+.hint { font-size: 13px; }
+input { font: inherit; max-width: 100%; }
+input[type="file"], input[type="number"] { border: 1px solid #ced9e3; padding: 8px; border-radius: 5px; }
+input[type="number"] { width: 7rem; }
+button, .download { background: white; border: 1px solid #aabdd0; color: #192b3c; border-radius: 6px; padding: 9px 13px; font: inherit; font-size: 14px; cursor: pointer; }
+button[type="submit"] { background: #275ce3; color: white; border-color: #275ce3; }
+button:disabled { opacity: .5; cursor: default; }
+.download { text-decoration: none; display: inline-block; }
+:focus-visible { outline: 3px solid #86a7ff; outline-offset: 3px; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.status { margin: 16px 0; min-height: 1.7em; overflow-wrap: anywhere; }
+.status[data-error="true"] { color: #a12731; }
+.results > header { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.rows, .frames { list-style: none; padding: 0; margin: 0; }
+.rows li { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: baseline; padding: 12px 0; border-top: 1px solid #e2e8ef; overflow-wrap: anywhere; }
+.rows a { margin-left: auto; }
+.frames { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); gap: 16px; }
+.frames li { min-width: 0; }
+.frames img { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #192b3c; display: block; margin-bottom: 8px; border-radius: 5px; }
+progress { width: 100%; }
